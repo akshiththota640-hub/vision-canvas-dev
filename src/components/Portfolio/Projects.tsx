@@ -90,19 +90,19 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <div 
                 key={project.id} 
-                className="card-glow group"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="card-glow group hover-lift hover-glow reveal-stagger"
+                style={{ animationDelay: `${index * 0.3}s` }}
               >
                 {/* Project Image */}
-                <div className="relative overflow-hidden rounded-t-lg h-48 bg-gradient-to-br from-primary/20 to-accent/20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl opacity-30">
+                <div className="relative overflow-hidden rounded-t-lg h-48 bg-gradient-to-br from-primary/20 to-accent/20 transition-all duration-500 group-hover:from-primary/30 group-hover:to-accent/30">
+                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                    <div className="text-6xl opacity-30 transition-opacity duration-500 group-hover:opacity-50">
                       {project.title.includes('Blog') ? '📝' : '💬'}
                     </div>
                   </div>
                   {project.highlight && (
-                    <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                    <div className="absolute top-4 right-4 animate-scale-in">
+                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full animate-pulse">
                         Featured
                       </span>
                     </div>
@@ -111,7 +111,7 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-bold text-text mb-3 group-hover:text-primary transition-all duration-300">
                     {project.title}
                   </h3>
                   
@@ -147,7 +147,7 @@ const Projects = () => {
                       variant="default" 
                       size="sm"
                       onClick={() => window.open(project.demoUrl, '_blank')}
-                      className="flex-1"
+                      className="flex-1 hover-lift transition-all duration-300"
                     >
                       Live Demo
                     </Button>
@@ -155,7 +155,7 @@ const Projects = () => {
                       variant="outline" 
                       size="sm"
                       onClick={() => window.open(project.sourceUrl, '_blank')}
-                      className="flex-1"
+                      className="flex-1 hover-lift transition-all duration-300"
                     >
                       Source Code
                     </Button>

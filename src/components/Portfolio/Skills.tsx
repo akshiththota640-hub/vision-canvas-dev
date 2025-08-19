@@ -66,7 +66,7 @@ const Skills = () => {
             {filteredSkills.map((skill, index) => (
               <div 
                 key={skill.name} 
-                className="card-glow p-6"
+                className="card-glow p-6 hover-lift reveal-stagger"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-between items-center mb-3">
@@ -74,13 +74,13 @@ const Skills = () => {
                   <span className="text-sm text-muted">{skill.level}%</span>
                 </div>
                 
-                {/* Progress Bar */}
-                <div className="w-full bg-surface rounded-full h-3 overflow-hidden">
+                {/* Enhanced Progress Bar */}
+                <div className="w-full bg-surface rounded-full h-4 overflow-hidden mb-4">
                   <div 
-                    className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out"
+                    className="progress-bar rounded-full transition-all duration-2000 ease-out"
                     style={{ 
                       width: `${skill.level}%`,
-                      animationDelay: `${index * 0.1}s`
+                      animationDelay: `${index * 0.2 + 0.5}s`
                     }}
                   ></div>
                 </div>

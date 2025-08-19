@@ -62,9 +62,9 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`nav-item px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'text-primary bg-surface'
+                      ? 'text-primary bg-surface active'
                       : 'text-muted hover:text-text hover:bg-surface/50'
                   }`}
                 >
@@ -111,16 +111,17 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-surface rounded-lg mt-2">
-              {navItems.map((item) => (
+            <div className={`mobile-menu px-2 pt-2 pb-3 space-y-1 bg-surface rounded-lg mt-2 ${isMobileMenuOpen ? 'open' : ''}`}>
+              {navItems.map((item, index) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  className={`reveal-stagger block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
                     activeSection === item.id
                       ? 'text-primary bg-card'
                       : 'text-muted hover:text-text hover:bg-card/50'
                   }`}
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {item.label}
                 </button>

@@ -23,8 +23,8 @@ const Hero = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Avatar */}
-        <div className="mb-8 reveal">
-          <div className="avatar-glow w-32 h-32 mx-auto animate-float">
+        <div className="mb-8 reveal animate-scale-in">
+          <div className="avatar-glow w-32 h-32 mx-auto animate-float hover-glow">
             <img
               src={avatarImage}
               alt="Akshith Kumar"
@@ -35,32 +35,32 @@ const Hero = () => {
 
         {/* Main Content */}
         <div className="space-y-6 reveal">
-          <h1 className="text-5xl md:text-7xl font-bold text-text mb-4">
+          <h1 className="reveal-stagger text-5xl md:text-7xl font-bold text-text mb-4">
             Hi, I'm <span className="gradient-text">Akshith Kumar</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted font-medium">
+          <p className="reveal-stagger text-xl md:text-2xl text-muted font-medium">
             Frontend Developer | AI Enthusiast
           </p>
           
-          <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="reveal-stagger text-lg text-muted max-w-2xl mx-auto leading-relaxed">
             Passionate about turning ideas into interactive digital experiences. 
             I build scalable, efficient, and user-friendly applications while exploring 
             how AI can transform web experiences.
           </p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <div className="reveal-stagger flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <button
               onClick={() => scrollToSection('projects')}
-              className="btn-hero"
+              className="btn-hero hover-lift"
             >
               View Projects
             </button>
             
             <button
               onClick={downloadResume}
-              className="btn-outline"
+              className="btn-outline hover-lift"
             >
               Download Resume
             </button>
@@ -68,10 +68,10 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
           <button
             onClick={() => scrollToSection('about')}
-            className="text-muted hover:text-text transition-colors"
+            className="text-muted hover:text-text transition-all duration-300 hover:scale-110"
           >
             <svg
               className="w-6 h-6"
